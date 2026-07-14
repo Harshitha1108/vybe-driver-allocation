@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: vybe-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: vybe
+    ports:
+      - "5433:5432"
+
+  redis:
+    image: redis:7
+    container_name: vybe-redis
+    restart: always
+    ports:
+      - "6379:6379"
